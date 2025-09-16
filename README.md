@@ -1,7 +1,7 @@
 # Cybersecurite-Analyse-des-protocoles-proprietaire-sub-1-GHz.
 Projet 2e année - Cybersécurité : étude des vulnérabilités des transmissions à des fréquences sub-GHz
 
-## Objectifs : 4 Objectifs
+## Objectifs : 4 Démonstrations
 
 Avec Flipper Zero :
   - Attaque simple, non cryptée
