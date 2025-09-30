@@ -6,8 +6,8 @@ Bienvenue sur le dépôt GitHub de notre projet de cybersécurité, réalisé da
 ## 👨‍👩‍👦 Équipe du Projet
 Nous sommes une équipe de cinq étudiants :
 
-- **Hevisinda Top**
 - **Lucas Raveloarinoro**
+- **Hevisinda Top**
 - **Wassim Makni**
 - **Awa Fofana**
 - **Elhoussaine Assanfe**
