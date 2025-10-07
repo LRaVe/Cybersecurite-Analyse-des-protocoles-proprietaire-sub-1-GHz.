@@ -68,7 +68,7 @@ Nous avons construit un Gantt sous forme de excel pour nous poser des deadlines 
 
 Ainsi, à la prochaine séance, on va : 
 
-STM32 : commencer le code pour capter un signal
+STM32 : commencer le code pour capter un signal en émettant avec une carte et en utilisant l'autre comme récepteur
 
 Flipper: Installation des package pour pouvoir développer une application sur le flipper 
 
