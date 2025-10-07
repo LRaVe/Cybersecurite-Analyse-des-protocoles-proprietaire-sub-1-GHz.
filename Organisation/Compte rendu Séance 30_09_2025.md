@@ -65,13 +65,10 @@ A partir de ces faiblesses nous allons effectuer des attaques avec le flipper z�
 
 Nous avons construit un Gantt sous forme de excel pour nous poser des deadlines et mieux visualiser notre calendrier.
 
-Voici le tableau : 
-
-…
 
 Ainsi, à la prochaine séance, on va : 
 
-STM32 : capter un signal et l’afficher 
+STM32 : commencer le code pour capter un signal
 
 Flipper: Installation des package pour pouvoir développer une application sur le flipper 
 
