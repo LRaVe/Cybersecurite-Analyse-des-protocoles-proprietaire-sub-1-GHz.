@@ -22,6 +22,7 @@ Démo C : STM32WL55 — reproduction de l’attaque simple (sonnette).
 
 Démo D : STM32WL55 — expérimentation et analyse du rolling‑code (clé de voiture).
 
-- la création d’une application sur Flipper capable passivement d’écouter les communications, et en déduire les faiblesses de sécurités des appareils écoutés.
+- La création d’une application sur Flipper capable passivement d’écouter les communications, et en déduire les faiblesses de sécurités des appareils écoutés.
+
 **---
 *Projet réalisé dans le cadre de deuxième année à l'ENSEA - 2025-2026.*
