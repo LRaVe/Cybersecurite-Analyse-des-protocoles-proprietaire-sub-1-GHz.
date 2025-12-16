@@ -24,5 +24,11 @@ Démo D : STM32WL55 — expérimentation et analyse du rolling‑code (clé de v
 
 - La création d’une application sur Flipper capable passivement d’écouter les communications, et en déduire les faiblesses de sécurités des appareils écoutés.
 
-**---
-*Projet réalisé dans le cadre de deuxième année à l'ENSEA - 2025-2026.*
+
+## Sous-Projet FlipperZero
+
+Rappel Objectif : utiliser les composants inclus dans le FlipperZero pour reconsrtruire du début une application de capture et de relecture de signaux sub-GHz.
+
+### Avancée Dec. 2025 
+
+L'application parvient à récupérer des paquets envoyés de fréquence $\textbf{433.92\~ MHz}$. Il ne manque maintenant que la partie relecture, même s'il est possible de le récupérer directement dans les fichiers du flipper.

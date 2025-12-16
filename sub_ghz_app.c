@@ -187,7 +187,7 @@ static void start_capture(SubGhzApp* app) {
     furi_hal_subghz_set_frequency_and_path(MY_FREQUENCY);
 
     // Configurer le GPIO GDO0 du CC1101 en mode input pour capturer les données
-    furi_hal_gpio_init(&gpio_cc1101_g0, GpioModeInput, GpioPullNo, GpioSpeedLow);
+    furi_hal_gpio_init(&gpio_cc1101_g0, GpioModeInput, GpioPullNo, GpioSpeedHigh);
 
     furi_hal_subghz_flush_rx();
     furi_hal_subghz_rx();
