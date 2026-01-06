@@ -41,15 +41,15 @@ L'application est maintenant **complètement fonctionnelle** avec capture et rep
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    APPLICATION SUBGHZ                        │
+│                    APPLICATION SUBGHZ                       │
 ├─────────────────────────────────────────────────────────────┤
 │  CAPTURE (app_state=0)                                      │
 │  └── furi_hal_subghz_start_async_rx() → capture_callback()  │
 │      └── Filtrage du bruit → Stockage dans raw_buffer[]     │
-│                                                              │
+│                                                             │
 │  AFFICHAGE (app_state=1)                                    │
 │  └── Lecture du fichier .sub sauvegardé                     │
-│                                                              │
+│                                                             │
 │  REPLAY (app_state=2)                                       │
 │  └── Transmission manuelle TX/IDLE avec timings précis      │
 └─────────────────────────────────────────────────────────────┘
