@@ -29,17 +29,12 @@ Démo D : STM32WL55 — expérimentation et analyse du rolling‑code (clé de v
 Afin d’assurer une conduite de projet structurée et efficace, plusieurs outils de planification, de suivi et de conception ont été utilisés tout au long du projet. Ces documents ont permis de clarifier les objectifs, de répartir les tâches et de suivre l’avancement des travaux.
 
 ### Planning et gestion du temps
-- **Diagramme de Gantt** : planification des différentes phases du projet.  
-  [Voir Gantt](Organisation/Gantt.png)  
-- **Roadmap** : visualisation des tâches à réaliser, en cours et terminées.  
-  [Voir Roadmap](Organisation/Roadmap.png)
+- [Gantt](Organisation/Gantt.png) : planification des différentes phases du projet.  
+- [Roadmap](Organisation/Roadmap.png) : visualisation des tâches à réaliser, en cours et terminées.
 
 ### Conception et spécification
-- **Diagramme des exigences** : définition des besoins fonctionnels et techniques du projet.  
-  [Voir Diagramme des exigences](Organisation/Diagramme_des_Exigences.png)  
-- **Cahier des charges** : description détaillée des objectifs.  
-  [Voir Cahier des charges](Organisation/Cahier_Des_charges.png)
-
+- [Diagramme des exigences](Organisation/Diagramme_des_Exigences.png) : définition des besoins fonctionnels et techniques du projet.  
+- [Cahier des charges](Organisation/Cahier_Des_charges.png) : description détaillée des objectifs.
 
 ## Sous-Projet FlipperZero Application
 
