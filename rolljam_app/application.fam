@@ -1,0 +1,14 @@
+# Rolling Code Bypass - Security Research Tool
+
+App(
+    appid="rolljam_app",
+    name="RollJam Attack",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="rolljam_app",
+    stack_size=4 * 1024,
+    fap_category="Sub-GHz",
+    fap_icon="rolljam.png",
+    fap_description="Rolling code bypass techniques for security research",
+    fap_author="Security Research",
+    fap_icon_assets="images",
+)
