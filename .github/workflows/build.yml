@@ -33,6 +33,7 @@ jobs:
         id: build-app
         with:
           sdk-channel: ${{ matrix.sdk-channel }}
+          app-dir: sub_ghz_app
       - name: Upload app artifacts
         uses: actions/upload-artifact@v4
         with:
