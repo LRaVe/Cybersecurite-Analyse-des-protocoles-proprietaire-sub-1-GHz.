@@ -12,7 +12,7 @@ Nous sommes une équipe de cinq étudiants :
 - **Awa Fofana**
 - **Elhoussaine Assanfe**
 
-## 🎯 Objectifs : 4 Démonstrations et une application
+## Objectifs : 4 Démonstrations et une application
 
 Démo A : Flipper Zero — attaque simple (sans chiffrement) sur la sonnette.
 
@@ -37,7 +37,7 @@ L'application parvient à récupérer des paquets envoyés de fréquence $\textb
 
 L'application est maintenant **complètement fonctionnelle** avec capture et replay de signaux radio.
 
-#### 🏗️ Architecture de l'Application
+#### Architecture de l'Application
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -55,7 +55,7 @@ L'application est maintenant **complètement fonctionnelle** avec capture et rep
 └─────────────────────────────────────────────────────────────┘
 ```
 
-#### 📡 APIs Flipper Zero Utilisées
+#### APIs Flipper Zero Utilisées
 
 | API | Fonction |
 |-----|----------|
@@ -66,7 +66,7 @@ L'application est maintenant **complètement fonctionnelle** avec capture et rep
 | `storage_*` / `stream_*` | Lecture/écriture fichiers .sub sur SD |
 | `gui_*` / `canvas_*` | Interface utilisateur |
 
-#### 🔧 Problèmes Rencontrés et Solutions
+#### Problèmes Rencontrés et Solutions
 
 ##### 1. Capture de bruit en permanence
 **Problème** : L'antenne capte énormément de bruit électromagnétique ambiant, rendant impossible la distinction d'un vrai signal.
@@ -125,7 +125,7 @@ volatile bool is_replaying;
 volatile bool replay_finished;
 ```
 
-#### 📁 Format du Fichier .sub
+#### Format du Fichier .sub
 
 ```
 Filetype: Flipper SubGhz RAW File
@@ -140,11 +140,4 @@ RAW_Data: 379 -966 1007 -366 987 -368 987 -366 353 -984 ...
 - **Valeurs positives** : durée HIGH (émission) en µs
 - **Valeurs négatives** : durée LOW (silence) en µs
 
-#### ✅ Résultat Final
-
-- ✅ Capture de signaux radio 433 MHz
-- ✅ Filtrage intelligent du bruit
-- ✅ Sauvegarde automatique après détection de silence
-- ✅ Replay fonctionnel (testé avec succès sur une sonnette)
-- ✅ Interface utilisateur réactive avec états CAPTURE → AFFICHAGE → REPLAY
 
