@@ -165,13 +165,14 @@ Plusieurs scénarios ont été testés en alternant les rôles des cartes afin d
 
 ### Schéma de principe
 
+```text
 ┌──────────────────────────────┐      ┌────────────────────────────────┐
 │  Carte STM32WL (Émetteur)    │      │  Carte STM32WL (Flipper Zero)   │
 │        Carte Test            │<────>│                                │
 │                              │      │                                │
 │  ComPort <────────────────── │      │ ───────────────────> ComPort   │
 └──────────────────────────────┘      └────────────────────────────────┘
-
+```
 
 ### Tentative de hacking d’une sonnette 433 MHz
 
