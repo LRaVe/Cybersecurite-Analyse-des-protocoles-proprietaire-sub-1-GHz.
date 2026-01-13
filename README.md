@@ -30,7 +30,7 @@ Afin d’assurer une conduite de projet structurée et efficace, plusieurs outil
 
 ### Planning et gestion du temps
 - [Gantt](Organisation/Gantt.png) : planification des différentes phases du projet.  
-- [Roadmap](Organisation/Roadmap.png) : visualisation des tâches à réaliser, en cours et terminées.
+- [Roadmap](Organisation/Roadmap.png) : suivi de l’avancement au sein de l’équipe.
 
 ### Conception et spécification
 - [Diagramme des exigences](Organisation/Diagramme_des_Exigences.png) : définition des besoins fonctionnels et techniques du projet.  
