@@ -1,10 +1,16 @@
 Choses à faire : 
 
 - Voir les différentes application du sub Ghz entre 300-928 MHz 
-fréquences les plus utilisées sous 1 Ghz : 868 MHz et 433 MHz : Awa 
-- Appliquer rapidement le flipper sur une cible
+fréquences les plus utilisées sous 1 Ghz : 868 MHz et 433 MHz : Awa : fait
+
+- Appliquer rapidement le flipper sur une cible : fait
 - Cahier des charges STM32 pour qu’il corresponde au flipper Zero
-=> diagramme des exigences
-- Faire un Gant 
+=> diagramme des exigences : fait 
+- Faire un Gant : fait
 - Créer un GitHub : fait
-- Reproduire Flipper zero sur STM32
+- Reproduire Flipper zero sur STM32 : fait
+
+Nouvelle to do list : (Après janvier)
+- Rolling code : applicatione et STM32
+- réussir à intégrer l'écran
+
