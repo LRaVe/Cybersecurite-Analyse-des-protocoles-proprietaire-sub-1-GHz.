@@ -34,7 +34,7 @@ Afin d’assurer une conduite de projet structurée et efficace, plusieurs outil
 
 ### Conception et spécification
 - [Diagramme des exigences](Organisation/Diagramme_des_Exigences.png) : définition des besoins fonctionnels et techniques du projet.  
-- [Cahier des charges](Organisation/Cahier_Des_charges.png) : description détaillée des objectifs.
+- [Cahier des charges](Organisation/Cahier_Des_charges.png) : description des objectifs.
 
 ## Sous-Projet FlipperZero Application
 
