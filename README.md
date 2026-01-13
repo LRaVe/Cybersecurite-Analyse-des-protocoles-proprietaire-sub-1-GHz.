@@ -37,10 +37,14 @@ Afin d’assurer une conduite de projet structurée et efficace, plusieurs outil
 - [Cahier des charges](Organisation/Cahier_Des_charges.png) : description des objectifs.
 
 ### RSE et Durabilité
-Dans le cadre de ce projet, des critères de **durabilité et d’économie d’énergie** ont été intégrés dès la phase de conception.  
-Ces critères sont précisés dans le [Cahier des charges](Organisation/Cahier_Des_charges.png) et incluent notamment :  
-- Choix de composants **durables** et à longue durée de vie.  
-- Capacité des dispositifs à fonctionner en **mode économie d’énergie** pour réduire la consommation globale.
+
+Dans le cadre de ce projet, nous avons mené une réflexion sur des thématiques **environnementales et sociétales** :  
+
+- **Durabilité des composants** : nous avons choisi des composants durables et à longue durée de vie pour réduire l’impact environnemental.  
+- **Économie d’énergie** : les dispositifs peuvent fonctionner en mode basse consommation afin de limiter la consommation globale.  
+- **Impact sociétal** : en analysant les protocoles Sub‑GHz, nous avons également pris en compte l’aspect sécurité et confidentialité des communications.
+
+Ces critères sont **formalisés dans le [Cahier des charges](Organisation/Cahier_Des_charges.png)** et représentés dans le **[Diagramme des exigences](Organisation/Diagramme_des_Exigences.png)**.
 
 ## Sous-Projet FlipperZero Application
 
