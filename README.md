@@ -36,6 +36,12 @@ Afin d’assurer une conduite de projet structurée et efficace, plusieurs outil
 - [Diagramme des exigences](Organisation/Diagramme_des_Exigences.png) : définition des besoins fonctionnels et techniques du projet.  
 - [Cahier des charges](Organisation/Cahier_Des_charges.png) : description des objectifs.
 
+### RSE et Durabilité
+Dans le cadre de ce projet, des critères de **durabilité et d’économie d’énergie** ont été intégrés dès la phase de conception.  
+Ces critères sont précisés dans le [Cahier des charges](Organisation/Cahier_Des_charges.png) et incluent notamment :  
+- Choix de composants **durables** et à longue durée de vie.  
+- Capacité des dispositifs à fonctionner en **mode économie d’énergie** pour réduire la consommation globale.
+
 ## Sous-Projet FlipperZero Application
 
 Rappel Objectif : utiliser les composants inclus dans le FlipperZero pour reconsrtruire du début une application de capture et de relecture de signaux sub-GHz.
