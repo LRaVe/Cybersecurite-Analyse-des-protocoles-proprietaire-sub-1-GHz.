@@ -1,17 +1,16 @@
-name: "FAP: Build for multiple SDK sources"
-# This will build your app for dev and release channels on GitHub. 
-# It will also build your app every day to make sure it's up to date with the latest SDK changes.
-# See https://github.com/marketplace/actions/build-flipper-application-package-fap for more information
+name: "RollJam App: Build for multiple SDK sources"
 
 on:
   push:
     branches: 
       - main
       - master
+    paths:
+      - 'rolljam_app/**'
   pull_request:
-  schedule: 
-    # do a build every day
-    - cron: "1 1 * * *"
+    paths:
+      - 'rolljam_app/**'
+  workflow_dispatch:
 
 jobs:
   ufbt-build:
@@ -23,8 +22,7 @@ jobs:
             sdk-channel: dev
           - name: release channel
             sdk-channel: release
-          # You can add unofficial channels here. See ufbt action docs for more info.
-    name: 'ufbt: Build for ${{ matrix.name }}'
+    name: 'ufbt: Build RollJam for ${{ matrix.name }}'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,9 +31,9 @@ jobs:
         id: build-app
         with:
           sdk-channel: ${{ matrix.sdk-channel }}
+          app-dir: rolljam_app
       - name: Upload app artifacts
         uses: actions/upload-artifact@v4
         with:
-          # See ufbt action docs for other output variables
-          name: ${{ github.event.repository.name }}-${{ steps.build-app.outputs.suffix }}
+          name: rolljam_app-${{ steps.build-app.outputs.suffix }}
           path: ${{ steps.build-app.outputs.fap-artifacts }}
