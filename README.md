@@ -25,7 +25,7 @@ Démo D : STM32WL55 — expérimentation et analyse du rolling‑code (clé de v
 - La création d’une application sur Flipper capable passivement d’écouter les communications, et en déduire les faiblesses de sécurités des appareils écoutés.
 
 
-## Sous-Projet FlipperZero
+## Sous-Projet FlipperZero Application
 
 Rappel Objectif : utiliser les composants inclus dans le FlipperZero pour reconsrtruire du début une application de capture et de relecture de signaux sub-GHz.
 
@@ -139,5 +139,64 @@ RAW_Data: 379 -966 1007 -366 987 -368 987 -366 353 -984 ...
 
 - **Valeurs positives** : durée HIGH (émission) en µs
 - **Valeurs négatives** : durée LOW (silence) en µs
+
+## Sous-Projet STM32
+
+### Objectif
+
+L’objectif principal de ce sous-projet est de reproduire le comportement du Flipper Zero à l’aide d’une carte Nucleo STM32, afin de comprendre le fonctionnement des communications radio Sub-GHz et d’évaluer la possibilité de hacker une sonnette sans fil fonctionnant à 433 MHz.
+
+Pour cela, nous avons utilisé une carte **STM32WL55JC2**, qui intègre un module de communication radio Sub-GHz. Ce type de communication est couramment employé dans des applications telles que les capteurs sans fil, les stations météorologiques ou les systèmes à longue portée et faible consommation. La carte supporte principalement les modulations **LoRa** et **FSK**.
+
+---
+
+### Mise en place de la communication Sub-GHz  
+*(Adaptation de l'exemple PingPong)*
+
+Dans un premier temps, nous avons mis en place une communication simple entre deux cartes STM32 en utilisant un fonctionnement Ping-Pong. Une carte agit comme émetteur et envoie un message, tandis que l’autre agit comme récepteur et renvoie une réponse. Cette méthode permet de valider le bon fonctionnement de la transmission et de la réception radio, ainsi que la stabilité de la liaison.
+
+La communication a ensuite été contrôlée à l’aide des boutons présents sur les cartes.
+
+Pour la carte correspondant au **Flipper Zero** :
+
+- **Bouton 2** : envoi du signal radio stocké  
+- **Bouton 1** : réception et stockage d’un signal radio  
+
+Plusieurs scénarios ont été testés en alternant les rôles des cartes afin de vérifier que l’émission et la réception fonctionnent correctement dans les deux sens. Ces tests ont permis de confirmer que la communication Sub-GHz entre deux STM32 est opérationnelle avec les modulations supportées.
+
+---
+
+### Schéma de principe
+
+
+Schéma de principe
+------------------------------      ------------------------------
+|   Carte STM32WL (Émetteur) |      | Carte STM32WL (Flipper Zero) |
+|      Carte Test            |<---->|                              |
+|                            |      |                              |
+| ComPort <------------------|      |------------------> ComPort  |
+------------------------------      ------------------------------
+
+---
+
+### Tentative de hacking d’une sonnette 433 MHz
+
+Dans un second temps, nous avons cherché à hacker une sonnette sans fil fonctionnant à 433 MHz, dans l’objectif de reproduire un cas d’attaque similaire à ceux réalisables avec le Flipper Zero. Bien que la fréquence utilisée par la sonnette soit identique à celle exploitée par la carte STM32, aucun signal exploitable n’a pu être reçu.
+
+Cette limitation s’explique par une différence de modulation. La sonnette utilise une modulation de type **ASK/OOK**, tandis que le récepteur Sub-GHz intégré à la STM32 ne prend en charge que les modulations **LoRa** et **FSK**. Ainsi, même avec une fréquence porteuse identique, la modulation incompatible empêche toute réception ou décodage du signal.
+
+---
+
+### Limites de l’approche STM32
+
+Cette expérimentation met en évidence une limite importante de notre approche : la fréquence seule ne suffit pas pour intercepter ou reproduire un signal radio. Le type de modulation joue un rôle déterminant dans la compatibilité des systèmes.
+
+Contrairement au Flipper Zero, qui supporte un large éventail de modulations grâce à son transceiver dédié, la carte STM32 utilisée reste limitée aux modulations prévues par son matériel.
+
+---
+
+### Conclusion à mi-durée du sous-projet STM32
+
+En conclusion, nous avons réussi à reproduire partiellement le comportement du Flipper Zero en mettant en place une communication Sub-GHz fonctionnelle entre deux cartes STM32. En revanche, le hacking de la sonnette 433 MHz n’a pas été possible en raison des contraintes matérielles liées aux modulations supportées, ce qui souligne l’importance du choix du transceiver dans les attaques radio Sub-GHz.
 
 
