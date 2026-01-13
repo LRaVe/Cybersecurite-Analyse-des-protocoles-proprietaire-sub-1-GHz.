@@ -170,6 +170,8 @@ Cette approche vise à mieux comprendre les communications Sub‑GHz et à éval
 
 La STM32WL55 intègre un module de communciation radio Sub‑GHz, couramment utilisé dans des applications IoT à faible consommation (capteurs, télémétrie, réseaux longue portée). Elle supporte principalement les modulations LoRa et FSK.
 
+### PCB Interface homme-machine
+Pour reproduire fidèlement le Flipper Zero, nous avons développé une carte PCB de type interface homme-machine (IHM),Prenant la forme d'un shield Arduino (R3) qui s'emboîte parfaitement sur notre carte Nucleo, elle intègre un écran OLED clair et deux boutons de navigation. C'est cette interface simple et robuste qui nous permet de contrôler manuellement l'application radio : capturer un signal, l'enregistrer, et de le retransmettre d'une simple pression. L'ensemble a été conçu pour être stable et fiable, avec une électronique adaptée, afin de se concentrer sur l'objectif du projet.
 
 ### Mise en place de la communication Sub-GHz  
 *(Adaptation de l'exemple PingPong)*
