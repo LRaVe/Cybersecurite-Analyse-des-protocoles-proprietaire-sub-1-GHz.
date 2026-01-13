@@ -148,7 +148,6 @@ L’objectif principal de ce sous-projet est de reproduire le comportement du Fl
 
 Pour cela, nous avons utilisé une carte **STM32WL55JC2**, qui intègre un module de communication radio Sub-GHz. Ce type de communication est couramment employé dans des applications telles que les capteurs sans fil, les stations météorologiques ou les systèmes à longue portée et faible consommation. La carte supporte principalement les modulations **LoRa** et **FSK**.
 
----
 
 ### Mise en place de la communication Sub-GHz  
 *(Adaptation de l'exemple PingPong)*
@@ -164,20 +163,13 @@ Pour la carte correspondant au **Flipper Zero** :
 
 Plusieurs scénarios ont été testés en alternant les rôles des cartes afin de vérifier que l’émission et la réception fonctionnent correctement dans les deux sens. Ces tests ont permis de confirmer que la communication Sub-GHz entre deux STM32 est opérationnelle avec les modulations supportées.
 
----
-
 ### Schéma de principe
 
-
-Schéma de principe
-------------------------------      ------------------------------
-|   Carte STM32WL (Émetteur) |      | Carte STM32WL (Flipper Zero) |
-|      Carte Test            |<---->|                              |
-|                            |      |                              |
-| ComPort <------------------|      |------------------> ComPort  |
-------------------------------      ------------------------------
-
----
+```mermaid
+flowchart LR
+    A[STM32WL55\nCarte Test] <-- Sub-GHz 433 MHz --> B[STM32WL55\nFlipper Zero]
+    A -->|USB / ComPort| PC1[PC]
+    B -->|USB / ComPort| PC2[PC]
 
 ### Tentative de hacking d’une sonnette 433 MHz
 
@@ -185,7 +177,6 @@ Dans un second temps, nous avons cherché à hacker une sonnette sans fil foncti
 
 Cette limitation s’explique par une différence de modulation. La sonnette utilise une modulation de type **ASK/OOK**, tandis que le récepteur Sub-GHz intégré à la STM32 ne prend en charge que les modulations **LoRa** et **FSK**. Ainsi, même avec une fréquence porteuse identique, la modulation incompatible empêche toute réception ou décodage du signal.
 
----
 
 ### Limites de l’approche STM32
 
@@ -193,7 +184,6 @@ Cette expérimentation met en évidence une limite importante de notre approche 
 
 Contrairement au Flipper Zero, qui supporte un large éventail de modulations grâce à son transceiver dédié, la carte STM32 utilisée reste limitée aux modulations prévues par son matériel.
 
----
 
 ### Conclusion à mi-durée du sous-projet STM32
 
