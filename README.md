@@ -165,11 +165,12 @@ Plusieurs scénarios ont été testés en alternant les rôles des cartes afin d
 
 ### Schéma de principe
 
-```mermaid
-flowchart LR
-    A[STM32WL55\nCarte Test] <-- Sub-GHz 433 MHz --> B[STM32WL55\nFlipper Zero]
-    A -->|USB / ComPort| PC1[PC]
-    B -->|USB / ComPort| PC2[PC]
+        ------------------------------      ------------------------------
+        |   Carte STM32WL (Émetteur) |      | Carte STM32WL (Flipper Zero) |
+        |      Carte Test            |<---->|                              |
+ComPort |                            |      |                              | ComPort
+   <----|                            |      |                              |---->
+        ------------------------------      ------------------------------
 
 ### Tentative de hacking d’une sonnette 433 MHz
 
