@@ -1,160 +1,157 @@
-# RollJam Attack Tool
+# Outil d'Attaque RollJam
 
-## ⚠️ FOR SECURITY RESEARCH AND EDUCATIONAL PURPOSES ONLY ⚠️
+## ⚠️ À DES FINS DE RECHERCHE EN SÉCURITÉ ET D'ÉDUCATION UNIQUEMENT ⚠️
 
-This Flipper Zero application demonstrates techniques to **bypass rolling code security** used in car key fobs, garage door openers, and other wireless access systems.
+Cette application Flipper Zero démontre des techniques permettant de **contourner la sécurité des codes roulants** utilisée dans les clés de voiture, les ouvreurs de portes de garage et autres systèmes d'accès sans fil.
 
-## The RollJam Attack Explained
+## L'Attaque RollJam Expliquée
 
-Rolling codes were designed to prevent simple replay attacks. However, the **RollJam attack** (discovered by Samy Kamkar) can bypass this protection.
+Les codes roulants ont été conçus pour prévenir les simples attaques par rejeu. Cependant, **l'attaque RollJam** (découverte par Samy Kamkar) peut contourner cette protection.
 
-### How Rolling Codes Work
+### Comment Fonctionnent les Codes Roulants
 ```
-Normal Operation:
+Fonctionnement Normal :
 ┌─────────────────┐         ┌─────────────────┐
-│   Key Fob       │  Code1  │   Car/Garage    │
-│   Counter: 5    │ ──────► │   Counter: 5    │
-│   Counter → 6   │         │   Counter → 6   │
+│   Clé           │  Code1  │   Voiture/Garage│
+│   Compteur: 5   │ ──────► │   Compteur: 5   │
+│   Compteur → 6  │         │   Compteur → 6  │
 └─────────────────┘         └─────────────────┘
 
-Replay Attack (BLOCKED):
+Attaque par Rejeu (BLOQUÉE):
 ┌─────────────────┐         ┌─────────────────┐
-│   Attacker      │  Code1  │   Car/Garage    │
-│   (old code)    │ ──────► │   Counter: 6    │
-│                 │         │   REJECTED!     │
+│   Attaquant     │  Code1  │   Voiture/Garage│
+│   (ancien code) │ ──────► │   Compteur: 6   │
+│                 │         │   REJETÉ!       │
 └─────────────────┘         └─────────────────┘
 ```
 
-### The RollJam Attack
+### L'Attaque RollJam
 ```
-Step 1: Victim presses button
+Étape 1 : La victime appuie sur le bouton
 ┌─────────────────┐         ┌─────────────────┐
-│   Key Fob       │  Code1  │   JAMMED!       │
-│   Counter: 5    │ ──╳───► │   (no signal)   │
-│   Counter → 6   │         │                 │
+│   Clé           │  Code1  │   BROUILLÉ!     │
+│   Compteur: 5   │ ──╳───► │   (pas de signal)
+│   Compteur → 6  │         │                 │
 └─────────────────┘         └─────────────────┘
          │
-         ▼ Attacker captures Code1
+         ▼ L'attaquant capture Code1
 
-Step 2: Victim presses again (thinks first didn't work)
+Étape 2 : La victime appuie à nouveau (pense que la première fois n'a pas marché)
 ┌─────────────────┐         ┌─────────────────┐
-│   Key Fob       │  Code2  │   Receives      │
-│   Counter: 6    │ ──╳───► │   Code1!        │ ← Attacker replays
-│   Counter → 7   │         │   Counter → 6   │
+│   Clé           │  Code2  │   Reçoit        │
+│   Compteur: 6   │ ──╳───► │   Code1!        │ ← L'attaquant rejoue
+│   Compteur → 7  │         │   Compteur → 6  │
 └─────────────────┘         └─────────────────┘
          │
-         ▼ Attacker captures Code2
+         ▼ L'attaquant capture Code2
 
-Result: Attacker has VALID UNUSED Code2!
+Résultat : L'attaquant a Code2 VALIDE NON UTILISÉ!
 ┌─────────────────┐         ┌─────────────────┐
-│   Attacker      │  Code2  │   Car/Garage    │
-│   (fresh code!) │ ──────► │   Counter: 6    │
-│                 │         │   ACCEPTED!     │
+│   Attaquant     │  Code2  │   Voiture/Garage│
+│   (code frais!) │ ──────► │   Compteur: 6   │
+│                 │         │   ACCEPTÉ!      │
 └─────────────────┘         └─────────────────┘
 ```
 
-## Features
+## Fonctionnalités
 
-### 1. RollJam Attack Mode
-Full automated attack:
-- Arms and waits for victim's signal
-- Jams receiver while capturing first code
-- Waits for victim's second press
-- Replays first code (victim thinks it worked)
-- Captures second code (your valid unused code!)
-- Ready to use anytime
+### 1. Mode Attaque RollJam
+Attaque automatisée complète :
+- Active et attend le signal de la victime
+- Brouille le récepteur tout en capturant le premier code
+- Attend le deuxième appui de la victime
+- Rejoue le premier code (la victime pense que ça a marché)
+- Capture le deuxième code (votre code valide non utilisé !)
+- Prêt à utiliser à tout moment
 
-### 2. Code Capture Mode
-Passive capture without jamming:
-- Listen for and record signals
-- Store multiple codes
-- Save to SD card as `.sub` files
+### 2. Mode Capture de Code
+Capture passive sans brouillage :
+- Écouter et enregistrer les signaux
+- Stocker plusieurs codes
+- Enregistrer sur carte SD sous forme de fichiers `.sub`
 
-### 3. Replay Mode
-Transmit captured codes:
-- Select from captured codes
-- Replay on demand
-- Track replay count
+### 3. Mode Rejeu
+Transmettre les codes capturés :
+- Sélectionner à partir des codes capturés
+- Rejouer à la demande
+- Suivre le nombre de rejeux
 
-### 4. Continuous Jamming
-Block signals in target frequency:
-- Toggle jamming on/off
-- Useful for testing range
+### 4. Brouillage Continu
+Bloquer les signaux à la fréquence cible :
+- Activer/désactiver le brouillage
+- Utile pour tester la portée
 
-### 5. Analyze Captures
-View statistics:
-- Codes captured
-- Signals detected
-- File locations
+### 5. Analyser les Captures
+Afficher les statistiques :
+- Codes capturés
+- Signaux détectés
+- Emplacements des fichiers
 
-## Usage
+## Utilisation
 
-### RollJam Attack
-1. Select **RollJam Attack** from menu
-2. Press **OK** to arm
-3. Wait near target (victim's car/garage)
-4. When victim presses their remote:
-   - App jams + captures Code1
-   - Victim thinks it didn't work
-5. Victim presses again:
-   - App captures Code2, replays Code1
-   - Victim's device opens (they leave)
-6. **SUCCESS!** You have unused Code2
-7. Press **OK** to use Code2 anytime
+### Attaque RollJam
+1. Sélectionner **Attaque RollJam** dans le menu
+2. Appuyer sur **OK** pour activer
+3. Attendre près de la cible (voiture/garage de la victime)
+4. Quand la victime appuie sur sa télécommande :
+   - L'app brouille + capture Code1
+   - La victime pense que ça n'a pas marché
+5. La victime appuie à nouveau :
+   - L'app capture Code2, rejoue Code1
+   - L'appareil de la victime s'ouvre (elle s'en va)
+6. **SUCCÈS !** Vous avez Code2 non utilisé
+7. Appuyer sur **OK** pour utiliser Code2 à tout moment
 
-### Simple Capture
-1. Select **Capture Codes**
-2. Press **OK** to start listening
-3. Captured codes saved to SD card
-4. Use **Replay** mode to transmit
+### Capture Simple
+1. Sélectionner **Capturer les Codes**
+2. Appuyer sur **OK** pour commencer à écouter
+3. Les codes capturés sont sauvegardés sur la carte SD
+4. Utiliser le mode **Rejeu** pour transmettre
 
-## Technical Details
+## Détails Techniques
 
-- **Frequency**: 433.92 MHz (configurable)
-- **Jam Offset**: +50 kHz (selective jamming)
-- **Buffer Size**: 16KB for signal capture
-- **Max Codes**: 10 stored in memory
-- **Files Saved**: `/ext/subghz/rolljam/`
+- **Fréquence** : 433,92 MHz (configurable)
+- **Décalage de Brouillage** : +50 kHz (brouillage sélectif)
+- **Taille du Tampon** : 16 KB pour la capture de signal
+- **Codes Max** : 10 stockés en mémoire
+- **Fichiers Sauvegardés** : `/ext/subghz/rolljam/`
 
-## Adjusting for Your Target
+## Ajuster pour Votre Cible
 
-Edit these defines in `rolljam_app.c`:
+Éditer ces defines dans `rolljam_app.c` :
 
 ```c
-#define TARGET_FREQUENCY    433920000   // Common: 433.92, 315, 868 MHz
-#define JAM_OFFSET          50000       // Jamming frequency offset
-#define RSSI_THRESHOLD      -65.0f      // Signal detection sensitivity
+#define TARGET_FREQUENCY    433920000   // Courant : 433.92, 315, 868 MHz
+#define JAM_OFFSET          50000       // Décalage de fréquence de brouillage
+#define RSSI_THRESHOLD      -65.0f      // Sensibilité de détection de signal
 ```
 
-Common frequencies:
-- **433.92 MHz** - Europe garage doors, many car fobs
-- **315 MHz** - US/Japan car fobs
-- **868 MHz** - Europe newer systems
+Fréquences courantes :
+- **433,92 MHz** - Portes de garage en Europe, nombreuses clés de voiture
+- **315 MHz** - Clés de voiture US/Japon
+- **868 MHz** - Systèmes plus récents en Europe
 
-## Files
+## Fichiers
 
 ```
 rolljam_app/
-├── application.fam      # App manifest
-├── rolljam_app.c        # Main source (~900 lines)
-├── rolljam.png          # App icon
-└── images/              # Assets folder
+├── application.fam      # Manifeste de l'app
+├── rolljam_app.c        # Source principale (~900 lignes)
+├── rolljam.png          # Icône de l'app
+└── images/              # Dossier d'assets
 ```
 
-## Building
+## Compilation
 
 ```bash
 cd rolljam_app
 ufbt
-ufbt launch  # To deploy to Flipper
+ufbt launch  # Pour déployer sur Flipper
 ```
 
-## Legal Warning
 
-This tool is for **authorized security research only**. Using it on systems you don't own or have permission to test is **illegal** in most jurisdictions. Always obtain proper authorization before testing.
+## Références
 
-## References
-
-- Samy Kamkar's RollJam presentation (DEF CON 23)
-- Rolling code / KeeLoq analysis papers
-- Flipper Zero Sub-GHz documentation
+- Présentation RollJam de Samy Kamkar (DEF CON 23)
+- Papiers d'analyse des codes roulants / KeeLoq
+- Documentation Flipper Zero Sub-GHz
