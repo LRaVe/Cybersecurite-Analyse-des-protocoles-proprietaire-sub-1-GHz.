@@ -219,3 +219,48 @@ Pour reproduire fidèlement le Flipper Zero, nous avons développé une carte PC
 En conclusion, nous avons réussi à reproduire partiellement le comportement du Flipper Zero en mettant en place une communication Sub-GHz fonctionnelle entre deux cartes STM32. En revanche, le hacking de la sonnette 433 MHz n’a pas été possible en raison des contraintes matérielles liées aux modulations supportées, ce qui souligne l’importance du choix du transceiver dans les attaques radio Sub-GHz.
 
 
+## Suite du projet : CaribouLite & Réseaux LoRa sécurisés
+
+Afin de dépasser les limitations rencontrées avec la STM32WL55, nous avons poursuivi le projet en utilisant une plateforme radio beaucoup plus flexible : **CaribouLite sur Raspberry Pi**.  
+Cette nouvelle étape nous a permis de revenir à l’écoute large bande Sub-GHz et d’élargir nos capacités d’analyse radio.
+
+Grâce à CaribouLite, nous avons pu :
+
+- observer le spectre radio Sub-GHz de manière plus fine  
+- capturer et analyser différents signaux radio  
+- confirmer expérimentalement les limites des attaques de replay  
+
+L'étude se fait sur un réseau **Meshtastic**, un système de communication LoRa mesh open-source.
+
+---
+
+## Nouvel objectif : reproduction d’une attaque Man-in-the-Middle
+
+L'objectif est de reproduire une **attaque Man-in-the-Middle (MITM)** sur un réseau radio LoRa.
+
+Une attaque Man-in-the-Middle consiste pour un attaquant à s’interposer entre deux appareils qui communiquent sans qu’ils s’en rendent compte.
+
+Dans ce scénario, l’attaquant peut :
+- intercepter les messages échangés
+- tenter d’en comprendre le contenu
+- modifier les messages avant retransmission
+- se faire passer pour l’un des participants
+
+Communication normale :
+
+
+Appareil A ─────────────► Appareil B
+
+
+Communication sous attaque MITM :
+
+Appareil A ───► Attaquant ───► Appareil B
+
+Les deux appareils pensent communiquer directement, alors que toute la communication passe en réalité par l’attaquant.
+
+---
+
+La mise en place et les détails du projet sont disponibles dans le dossier :
+
+[LoRa_Meshtastic](LoRa_Meshtastic/README.md) 
+
