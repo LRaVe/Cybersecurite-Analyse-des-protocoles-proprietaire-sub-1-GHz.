@@ -16,15 +16,15 @@
 | Cartes Meshtastic | Simulation du trafic légitime |
 
 <p align="center">
-  <img src="images/antenne.png" width="180" alt="Antenne 868 MHz"/>
+  <img src="images/antenne.jpeg" width="280" alt="Antenne 868 MHz"/>
   &nbsp;&nbsp;
-  <img src="images/cariboulite.png" width="280" alt="CaribouLite HAT"/>
+  <img src="images/cariboulite.jpeg" width="280" alt="CaribouLite HAT"/>
   &nbsp;&nbsp;
-  <img src="images/cariboulite_pi4.png" width="280" alt="Raspberry Pi 4 + CaribouLite montée"/>
+  <img src="images/cariboulite_pi4.jpeg" width="280" alt="Raspberry Pi 4 + CaribouLite montée"/>
 </p>
 
 <p align="center">
-  <img src="images/carte_meshtastic.png" width="320" alt="Cartes Meshtastic"/>
+  <img src="images/carte_meshtastic.jpeg" width="240" alt="Cartes Meshtastic"/>
 </p>
 
 ---
@@ -137,7 +137,7 @@ Dans l'interface : sélectionner le device **CaribouLite S1G** et régler la fr�
 - Waterfall : émissions visibles sous forme de **traces verticales colorées**
 
 <p align="center">
-  <img src="images/gqrx.png" width="600" alt="Capture GQRX — spectre LoRa 868 MHz"/>
+  <img src="images/gqrx.jpeg" width="600" alt="Capture GQRX — spectre LoRa 868 MHz"/>
 </p>
 
 ---
@@ -157,7 +157,7 @@ GNU Radio est un logiciel qui permet de traiter les signaux radio. On peut le co
 
 
 <p align="center">
-  <img src="images/gnu_radio_schema.png" width="680" alt="Les différentes étapes de notre système"/>
+  <img src="images/gnu_radio_schema.jpeg" width="680" alt="Les différentes étapes de notre système"/>
 </p>
 
 ```
@@ -267,7 +267,7 @@ sudo ./cariboulite_replay -f 869525000 -r 4000000 /tmp/capture.cs16
 On obtient:
 
 <p align="center">
-  <img src="images/gnu_radio_emission.png" width="600" alt="Terminal — replay attack en cours"/>
+  <img src="images/gnu_radio_emission.png" width="400" alt="Terminal — replay attack en cours"/>
 </p>
 
 ---
