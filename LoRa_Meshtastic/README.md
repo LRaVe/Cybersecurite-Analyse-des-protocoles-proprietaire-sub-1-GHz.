@@ -153,7 +153,7 @@ GNU Radio est un logiciel qui permet de traiter les signaux radio. On peut le co
 - Montre ce qui se passe en temps réel
 - Enregistre tout pour analyser plus tard
 
- Voici le diagramme de notre système :
+ Voici le **[Diagramme de notre système](LoRa_Meshtastic/schema_cariboulite.grc)**:
 
 
 <p align="center">
@@ -249,7 +249,8 @@ sudo cariboulite_util -c 0 -f 869525000 -n 40000000 /tmp/capture.cs16
 Après avoir enregistré les signaux réels, on peut les rejouer avec la CaribouLite. C'est comme appuyer sur "play" sur un enregistrement radio.
 
 
-Compilation du replayer :
+
+Compilation du **[replayer](LoRa_Meshtastic/cariboulite_replay.c)** :
 
 ```bash
 gcc /home/projet_rasp/Documents/cariboulite_replay.c -o cariboulite_replay \
