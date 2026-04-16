@@ -1,8 +1,6 @@
 # 📡 Analyse de la Robustesse des Réseaux Meshtastic (LoRa)
 
-> **Partie 2 du projet** — Station d'interception offensive basée sur CaribouLite + Raspberry Pi 4  
-> Observation spectrale, sniffing passif et scénarios de compromission sur réseaux maillés LoRa.
-
+> Notre 2eme partie du projet s'articule autour de l'analyse de la robustesse des réseaux maillés Meshtastic (basés sur LoRa). Pour ce faire, nous avons mis en place une station d'interception offensive utilisant une CaribouLite couplée à un Raspberry Pi 4, permettant ainsi une observation spectrale précise et ouvrant la voie à des scénarios de compromission de données sans fil.
 ---
 
 ## 🧰 Matériel utilisé
